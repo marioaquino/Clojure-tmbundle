@@ -23,9 +23,9 @@ Run this:
 An update script will :
 
 * Get Clojure and Clojure-contrib from Github.
-* Get library for generating off-line documentation from github.
-* Build documentation.
+* Build off-line documentation from clojure source.
 
 Run this :
 
-	$ ./Clojure.tmbundle/Vendor/generate-documentation.rb
+  $ cd Clojure.tmbundle/Vendor
+	$ ./generate-documentation.rb
