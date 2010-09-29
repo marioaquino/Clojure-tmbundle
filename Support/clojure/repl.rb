@@ -45,8 +45,8 @@ class Clojure::REPL
   end
   
   def update_textmate
-    # TODO: Grab output or launch upadte command
-    `"$CLOJURE_HOME/clj-update-and-build"`
+    # TODO: Grab output or launch update command
+    `"$CLOJURE_HOME/generate-documentation.rb"`
     if $? != 0
       puts <<-MSG
 <pre>

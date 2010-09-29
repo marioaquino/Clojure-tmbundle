@@ -46,7 +46,9 @@ CMDLINE.parse!(ARGV)
 CLASSPATH = e_sh(@jars).join(":")
 
 if @interactive
-  exec("java -server -Djava.ext.dirs=./jars -cp #{CLASSPATH} jline.ConsoleRunner clojure.lang.Repl #{e_sh(ARGV).join(" ")}")
+  # exec("java -server -cp #{CLASSPATH} jline.ConsoleRunner clojure.lang.Repl #{e_sh(ARGV).join(" ")}")
+  # exec("java -server -cp #{CLASSPATH} jline.ConsoleRunner clojure.main #{e_sh(ARGV).join(" ")}") # This last param makes it restartable
+  exec("java -server -cp #{CLASSPATH} jline.ConsoleRunner clojure.main")
 else         
-  exec("java -server -Djava.ext.dirs=./jars -cp #{CLASSPATH} clojure.lang.Script #{e_sh(ARGV).join(" ")}")  
+  exec("java -server -cp #{CLASSPATH} clojure.lang.Script #{e_sh(ARGV).join(" ")}")  
 end
